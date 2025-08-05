@@ -8,12 +8,13 @@ public class UserRoutes {
     public UserRoutes(UserController userController) {
         this.userController = userController;
     }
+
     public void register(Javalin app) {
         app.get("/users", userController::getAll);
         app.post("/users", userController::create);
         app.get("/users/{id}", userController::getById);
-        // Ejemplo de más rutas:
-        // app.put("/users/:id", userController::update);
-        // app.delete("/users/:id", userController::delete);
+        app.put("/users/{id}", userController::update);
+        app.delete("/users/{id}", userController::delete);
+    // Ejemplo de más rutas:
     }
 }

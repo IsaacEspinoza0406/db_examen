@@ -23,4 +23,14 @@ public class UserService {
         // Podrías validar aquí si el email ya existe, etc.
         userRepo.save(user);
     }
+
+    public void updateUser(User user) throws SQLException {
+        userRepo.update(user);
+    }
+
+    public void deleteUser(int id) throws SQLException {
+        userRepo.delete(id);
+    }
+
+
 }
